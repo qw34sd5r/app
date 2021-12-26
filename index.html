@@ -8,7 +8,7 @@
 </head>
 <body>
     <div style="text-align:center;">
-    <div>-笑ってはいけないクリスマス-</div>
+    <div>笑ってはいけないクリスマス</div>
     <button type="button" onclick="init()">Start</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -61,7 +61,8 @@
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
             if(prediction[0].probability.toFixed(2) > 0.80){
-                <audio src="nc38022.mp3"></audio>
+                var audio = new audio("nc38022.mp3");
+                audio.play();
             }
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
